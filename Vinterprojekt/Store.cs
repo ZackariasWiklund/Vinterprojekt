@@ -28,10 +28,12 @@ public class Store
     }
 
     public void PrintAvailableWords()
-    {
+    {   
+        Console.ForegroundColor = ConsoleColor.White;
         Console.WriteLine("Ord tillgängliga i butiken:");
         foreach (var word in availableWords)
-        {
+        {   
+            Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine(word);
         }
     }

@@ -21,7 +21,7 @@ while (tama.GetAlive() == true)
 string Val = Console.ReadLine();
 if (Val == "1")
 {
-    
+    Console.WriteLine();
     string word = Console.ReadLine();
     tama.Teach(word);
     tama.Tick();
@@ -30,7 +30,7 @@ if (Val == "1")
 
 if (Val == "2")
 {
-    
+    Console.WriteLine();
     tama.Hi();
     tama.Tick();
     Console.WriteLine();
@@ -38,7 +38,7 @@ if (Val == "2")
 
 if (Val == "3")
 {   
-    
+    Console.WriteLine();
     tama.Feed();
     tama.Tick();
     Console.WriteLine();
@@ -46,15 +46,19 @@ if (Val == "3")
 
 else if (Val == "4")
 {
-    
+    Console.WriteLine();
     Console.WriteLine("Du gör inget");
     tama.Tick();
     Console.WriteLine();
 }
 
 else if (Val == "5")
-{
+{   
+    Console.WriteLine();
+    
     store.PrintAvailableWords();
+    Console.ForegroundColor = ConsoleColor.White;
+    Console.WriteLine();
     Console.WriteLine($"Du har {store.coins} coins. Vill du köpa ett nytt ord? Ja/Nej");
     string buyVal = Console.ReadLine();
     if (buyVal.ToLower() == "ja")

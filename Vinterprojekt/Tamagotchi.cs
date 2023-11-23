@@ -65,7 +65,26 @@ public class Tamagotchi
     
     public void PrintStats()
     {
-        Console.WriteLine($"Name: {name} || Hunger: {hunger} || Boredom: {boredom} || Vocabulary: {words.Count} words");
+    
+    Console.Write("Name: ");
+    Console.ForegroundColor = ConsoleColor.Yellow;
+    Console.Write($"{name}");
+    Console.ResetColor();
+
+    Console.Write(" || ");
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.Write($"Hunger: {hunger}");
+    Console.ResetColor();
+
+    Console.Write(" || ");
+    Console.ForegroundColor = ConsoleColor.Blue;
+    Console.Write($"Boredom: {boredom}");
+    Console.ResetColor();
+
+    Console.Write(" || ");
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.WriteLine($"Vocabulary: {words.Count} words");
+    Console.ResetColor();
     }
 
     public bool GetAlive()
