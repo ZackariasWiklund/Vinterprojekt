@@ -1,13 +1,14 @@
 public class Store
-{
+{   
     private List<string> availableWords = new List<string> {"Arrestera", "Groda", "Super", "Scratch", "Devilish", "Lunch", "Kindly"};
     private Random random = new Random();
     public int coins = 10;
 
     public string BuyWord()
     {
-        if (coins <= 0)
-        {
+        if (coins -3 <= 0)
+        {   
+            
             Console.WriteLine("Du har inte tillräckligt med coins");
             return null;
         }
@@ -23,7 +24,7 @@ public class Store
         availableWords.RemoveAt(index);
         coins-=3;
         Console.WriteLine($"Du köpte ett ord: {word}");
-        Console.WriteLine($"Du har {coins} kvar");
+        Console.WriteLine($"Du har {coins} coins kvar");
         return word;
     }
 
@@ -31,6 +32,7 @@ public class Store
     {   
         Console.ForegroundColor = ConsoleColor.White;
         Console.WriteLine("Ord tillgängliga i butiken:");
+        Console.WriteLine();
         foreach (var word in availableWords)
         {   
             Console.ForegroundColor = ConsoleColor.Magenta;
