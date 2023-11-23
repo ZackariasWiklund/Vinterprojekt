@@ -55,7 +55,7 @@ else if (Val == "4")
 else if (Val == "5")
 {
     store.PrintAvailableWords();
-    Console.WriteLine("Vill du köpa ett nytt ord? Ja/Nej");
+    Console.WriteLine($"Du har {store.coins} coins. Vill du köpa ett nytt ord? Ja/Nej");
     string buyVal = Console.ReadLine();
     if (buyVal.ToLower() == "ja")
     {

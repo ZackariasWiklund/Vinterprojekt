@@ -1,5 +1,6 @@
 using System.IO.Compression;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 
 public class Tamagotchi
@@ -11,6 +12,8 @@ public class Tamagotchi
     private Random generator  = new Random();
 
     public string name;
+
+    private int coins = 0; 
 
     public Tamagotchi()
     {
