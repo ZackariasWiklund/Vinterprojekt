@@ -1,7 +1,20 @@
 ﻿Tamagotchi tama = new Tamagotchi();
 Store store = new Store();
-
-
+Console.ForegroundColor = ConsoleColor.Cyan;
+Console.WriteLine(@"
+                             _____                                 _       _     _ 
+                            |_   _|                               | |     | |   (_)
+                              | | __ _ _ __ ___   __ _  __ _  ___ | |_ ___| |__  _ 
+                              | |/ _` | '_ ` _ \ / _` |/ _` |/ _ \| __/ __| '_ \| |
+                              | | (_| | | | | | | (_| | (_| | (_) | || (__| | | | |
+                              \_/\__,_|_| |_| |_|\__,_|\__, |\___/ \__\___|_| |_|_|
+                                                        __/ |                      
+                                                       |___/                       
+                           _________________________________________________________ ");
+    
+Console.ForegroundColor = ConsoleColor.White;    
+Console.WriteLine();
+Console.WriteLine();                                   
 Console.WriteLine("Döp din Tamagotchi");
 tama.name = Console.ReadLine();
 Console.WriteLine();
