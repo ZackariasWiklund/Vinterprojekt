@@ -21,6 +21,30 @@ public class Tamagotchi
         isAlive = true;
     }
 
+    public void CatchGame(Store store)
+    {   
+        Random random = new Random();
+        int chance = random.Next(1, 15);
+        Console.WriteLine($"Du kastar bollen till {name} ");
+        bool caught = true;
+        hunger += 2;
+
+        if (chance > 10)
+        {   
+            store.coins += 6;
+            Console.WriteLine($"{name} fångade bollen! Du får 6 coins");
+        }
+        else
+        {
+            Console.WriteLine($"{name} fångade tyvärr inte bollen, försök igen nästa gång");
+        }
+        
+        if (hunger>10)
+        {
+            isAlive = false;
+        }
+    }
+
     public void Feed()
     {
         Console.WriteLine($"{name} äter och blir mindre hungrig");

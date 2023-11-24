@@ -28,6 +28,7 @@ while (tama.GetAlive() == true)
     Console.WriteLine($"3, mata {tama.name}");
     Console.WriteLine("4, gör inget");
     Console.WriteLine("5, Besök Affären");
+    Console.WriteLine("6, Kasta boll");
     Console.WriteLine();
 
 
@@ -86,6 +87,16 @@ else if (Val == "5")
         }
     }
 }
+
+else if (Val == "6")
+{
+    Console.Clear();
+    Console.WriteLine();
+
+    tama.CatchGame(store);
+    
+}
+
 }
 
 tama.Tick();
