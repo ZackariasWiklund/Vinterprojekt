@@ -89,7 +89,7 @@ else if (Val == "5")
 }
 
 else if (Val == "6")
-{
+{   
     Console.Clear();
     Console.WriteLine();
 
