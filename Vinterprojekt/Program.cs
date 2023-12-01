@@ -127,6 +127,25 @@ else if (Val == "8")
         Console.WriteLine();
         
     }  
+
+    for (int i = 0; i < TamaList.Count; i++)
+{
+    Console.WriteLine($"{i + 1}. {TamaList[i].name}");
+}
+
+// Låt användaren välja genom att ange indexet för Tamagotchit från listan
+int chosenIndex = int.Parse(Console.ReadLine()) - 1;
+
+if (chosenIndex >= 0 && chosenIndex < TamaList.Count)
+{
+    Tamagotchi chosenTama = TamaList[chosenIndex];
+    
+}
+else
+{
+    Console.WriteLine("Ogiltigt val. Försök igen.");
+    Console.ReadLine();
+}
     
 }
 
