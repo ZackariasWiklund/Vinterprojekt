@@ -1,5 +1,7 @@
 ﻿Tamagotchi tama = new Tamagotchi();
+List<Tamagotchi> TamaList = new List<Tamagotchi>();
 Store store = new Store();
+TamagotchiManager manager = new TamagotchiManager();
 Console.ForegroundColor = ConsoleColor.Cyan;
 Console.WriteLine(@"
                              _____                                 _       _     _ 
@@ -29,6 +31,8 @@ while (tama.GetAlive() == true)
     Console.WriteLine("4, gör inget");
     Console.WriteLine("5, Besök Affären");
     Console.WriteLine("6, Kasta boll");
+    Console.WriteLine("7, Köp en ny Tamagotchi");
+    Console.WriteLine("8, Inspektera Tamagotchis");
     Console.WriteLine();
 
 
@@ -94,6 +98,35 @@ else if (Val == "6")
     Console.WriteLine();
 
     tama.CatchGame(store);
+    
+}
+
+else if (Val == "7")
+{
+    Console.Clear();
+    Console.WriteLine("Ange namn för den nya Tamagotchin:");
+    string newName = Console.ReadLine();
+    Tamagotchi newTama = new Tamagotchi();
+    newTama.name = newName;
+    TamaList.Add(newTama);
+    
+    
+
+    Console.WriteLine($"Du har köpt en ny Tamagotchi och döpt den till {newName}.");
+}
+
+else if (Val == "8")
+{
+    Console.Clear();
+    Console.WriteLine("Dina Tamagotchis:");
+    Console.WriteLine();          
+    foreach (var newTama in TamaList)
+    {
+        Console.WriteLine($"Tamagotchi namn: {newTama.name}");
+        
+        Console.WriteLine();
+        
+    }  
     
 }
 

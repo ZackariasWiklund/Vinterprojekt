@@ -5,8 +5,8 @@ using System.Security.Cryptography;
 
 public class Tamagotchi
 {
-    private int hunger;
-    private int boredom;
+    public int hunger;
+    public int boredom;
     public List<string> words = new() {"Hello"};
     private bool isAlive;
     private Random generator  = new Random();
