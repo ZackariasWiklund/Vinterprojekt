@@ -1,7 +1,7 @@
 ﻿Tamagotchi tama = new Tamagotchi();
 List<Tamagotchi> TamaList = new List<Tamagotchi>();
+NewTamamagotchi NT = new NewTamamagotchi();
 Store store = new Store();
-TamagotchiManager manager = new TamagotchiManager();
 Console.ForegroundColor = ConsoleColor.Cyan;
 Console.WriteLine(@"
                              _____                                 _       _     _ 
@@ -131,15 +131,20 @@ else if (Val == "8")
     for (int i = 0; i < TamaList.Count; i++)
 {
     Console.WriteLine($"{i + 1}. {TamaList[i].name}");
+    
 }
 
 // Låt användaren välja genom att ange indexet för Tamagotchit från listan
 int chosenIndex = int.Parse(Console.ReadLine()) - 1;
 
 if (chosenIndex >= 0 && chosenIndex < TamaList.Count)
-{
-    Tamagotchi chosenTama = TamaList[chosenIndex];
-    
+{   
+    Console.Clear();
+        NewTamamagotchi selectedNT = new NewTamamagotchi();
+        selectedNT.AssignName(TamaList[chosenIndex].name); // Tilldela namnet till den nya instansen
+
+        selectedNT.NewPrintStats();
+        Console.ReadLine();
 }
 else
 {

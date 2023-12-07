@@ -110,7 +110,8 @@ public class Tamagotchi
     Console.WriteLine($"Vocabulary: {words.Count} words");
     Console.ResetColor();
     }
-
+    
+    
     public bool GetAlive()
     {
         return isAlive;
