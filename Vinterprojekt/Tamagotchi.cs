@@ -116,4 +116,5 @@ public class Tamagotchi
     {
         return isAlive;
     }
+
 }
