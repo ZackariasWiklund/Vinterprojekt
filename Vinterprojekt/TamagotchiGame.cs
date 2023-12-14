@@ -1,9 +1,13 @@
 public class TamagotchiGame
 {
-    
+
+
+
 public void TamaGame()
-{
+{   
+
     Tamagotchi tama = new Tamagotchi();
+    RunNewTamaGame newgame = new RunNewTamaGame();
     List<Tamagotchi> TamaList = new List<Tamagotchi>();
     NewTamamagotchi NT = new NewTamamagotchi();
     Store store = new Store();
@@ -26,6 +30,7 @@ Console.WriteLine("Döp din Tamagotchi");
 tama.name = Console.ReadLine();
 Console.WriteLine();
 
+
 while (tama.GetAlive() == true)
 {
     
@@ -43,120 +48,129 @@ while (tama.GetAlive() == true)
 
     string Val = Console.ReadLine();
     if (Val == "1")
-        {   Console.Clear();
-            Console.WriteLine();
-            string word = Console.ReadLine();
-            tama.Teach(word);
-            tama.Tick();
-            Console.WriteLine();
-        }
+    {   Console.Clear();
+        Console.WriteLine();
+        string word = Console.ReadLine();
+        tama.Teach(word);
+        tama.Tick();
+        Console.WriteLine();
+    }
 
     if (Val == "2")
-        {   Console.Clear();
-            Console.WriteLine();
-            tama.Hi();
-            tama.Tick();
-            Console.WriteLine();
-        }
+    {   Console.Clear();
+        Console.WriteLine();
+        tama.Hi();
+        tama.Tick();
+        Console.WriteLine();
+    }
 
     if (Val == "3")
-        {   
-            Console.Clear();
-            Console.WriteLine();
-            tama.Feed();
-            tama.Tick();
-            Console.WriteLine();
-        }
+    {   
+        Console.Clear();
+        Console.WriteLine();
+        tama.Feed();
+        tama.Tick();
+        Console.WriteLine();
+    }
 
     else if (Val == "4")
-        {   Console.Clear();
-            Console.WriteLine();
-            Console.WriteLine("Du gör inget");
-            tama.Tick();
-            Console.WriteLine();
-        }
+    {   Console.Clear();
+        Console.WriteLine();
+        Console.WriteLine("Du gör inget");
+        tama.Tick();
+        Console.WriteLine();
+    }
 
     else if (Val == "5")
-        {   Console.Clear();
-            Console.WriteLine();
+    {   Console.Clear();
+        Console.WriteLine();
 
-            store.PrintAvailableWords();
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine();
-            Console.WriteLine($"Du har {store.coins} coins. Vill du köpa ett nytt ord? Ja/Nej");
-            string buyVal = Console.ReadLine();
-            if (buyVal.ToLower() == "ja")
-                {   
-                    Console.Clear();
-                    string newWord = store.BuyWord();
-                    if (newWord != null)
-                        {
-                            tama.Teach(newWord);
-                            tama.Tick();
-                        }
-                }
-        }
-
-    else if (Val == "6")
+        store.PrintAvailableWords();
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine();
+        Console.WriteLine($"Du har {store.coins} coins. Vill du köpa ett nytt ord? Ja/Nej");
+        string buyVal = Console.ReadLine();
+        if (buyVal.ToLower() == "ja")
         {   
             Console.Clear();
-            Console.WriteLine();
-            tama.CatchGame(store);
-    
+            string newWord = store.BuyWord();
+            if (newWord != null)
+            {
+                tama.Teach(newWord);
+                tama.Tick();
+            }
         }
+    }
+
+    else if (Val == "6")
+    {   
+        Console.Clear();
+        Console.WriteLine();
+        tama.CatchGame(store);
+    
+    }
 
     else if (Val == "7")
-        {
-            Console.Clear();
-            Console.WriteLine("Ange namn för den nya Tamagotchin:");
-            string newName = Console.ReadLine();
-            Tamagotchi newTama = new Tamagotchi();
-            newTama.name = newName;
-            TamaList.Add(newTama);
-            Console.WriteLine($"Du har köpt en ny Tamagotchi och döpt den till {newName}.");
+    {
+        Console.Clear();
+        Console.WriteLine("Ange namn för den nya Tamagotchin:");
+        string newName = Console.ReadLine();
+        Tamagotchi newTama = new Tamagotchi();
+        newTama.name = newName;    
+        if (store.coins -3 <= 0)
+        {   
+            
+            Console.WriteLine("Du har inte tillräckligt med coins");
+            
+        }
+        TamaList.Add(newTama);
+        store.coins -=30;    
+        Console.WriteLine($"Du har köpt en ny Tamagotchi och döpt den till {newName}.");
+            
         }
 
     else if (Val == "8")
-        {
-            Console.Clear();
-            Console.WriteLine("Dina Tamagotchis:");
-            Console.WriteLine();          
-            foreach (var newTama in TamaList)
-                {
-                    Console.WriteLine($"Tamagotchi namn: {newTama.name}");
-                    Console.WriteLine();
+    {
+        Console.Clear();
+        Console.WriteLine("Dina Tamagotchis:");
+        Console.WriteLine();          
+        foreach (var newTama in TamaList)
+        {    
+            Console.WriteLine($"Tamagotchi namn: {newTama.name}");
+            Console.WriteLine();
         
-                }  
+        }  
 
-            for (int i = 0; i < TamaList.Count; i++)
-                {
-                    Console.WriteLine($"{i + 1}. {TamaList[i].name}");
+        for (int i = 0; i < TamaList.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. {TamaList[i].name}");
     
-                }
+        }
 
     // Låt användaren välja genom att ange indexet för Tamagotchit från listan
-        int chosenIndex = int.Parse(Console.ReadLine()) - 1;
+        int chosenIndex = 0;
+        
 
-            while (chosenIndex >= 0 && chosenIndex < TamaList.Count)
-                {   
-                    Console.Clear();
-                    NewTamamagotchi selectedNT = new NewTamamagotchi();
-                    selectedNT.AssignName(TamaList[chosenIndex].name); // Tilldela namnet till den nya instansen
-                    selectedNT.NewPrintStats();
-                    Console.ReadLine();
-
+        if (int.TryParse(Console.ReadLine(), out chosenIndex) && chosenIndex > 0 && chosenIndex <= TamaList.Count)
+        {   
+            Console.Clear();
+            NewTamamagotchi selectedNT = new NewTamamagotchi();
+            selectedNT.AssignName(TamaList[chosenIndex - 1].name); // Tilldela namnet till den nya instansen
+            selectedNT.NewPrintStats();
+            newgame.RunTamagotchiGame(selectedNT);
                     
-                    
-                }
-            
-            
+            //selectedNT.Feed();
+            //selectedNT.Hi();
+            //Console.ReadLine();    
         }
+            
+    }
 
     else 
-        {
-            Console.WriteLine("Ogiltigt val. Försök igen.");
-            Console.ReadLine();
-        }
+    {
+        Console.WriteLine("Ogiltigt val. Försök igen.");
+        Console.ReadLine();
+    }
     
 
     

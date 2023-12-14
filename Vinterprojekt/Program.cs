@@ -1,5 +1,5 @@
 ﻿
 TamagotchiGame tamagame = new TamagotchiGame();
 
-tamagame.TamaGame();
+tamagame.TamaGame();    
 
