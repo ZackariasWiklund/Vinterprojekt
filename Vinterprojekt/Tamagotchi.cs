@@ -26,7 +26,7 @@ public class Tamagotchi
         Random random = new Random();
         int chance = random.Next(1, 15);
         Console.WriteLine($"Du kastar bollen till {name} ");
-        bool caught = true;
+        
         hunger += 2;
 
         if (chance > 10)

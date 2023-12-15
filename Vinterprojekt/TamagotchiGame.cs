@@ -123,8 +123,7 @@ while (tama.GetAlive() == true)
             Console.WriteLine("Du har inte tillräckligt med coins");
             
         }
-        TamaList.Add(newTama);
-        store.coins -=30;    
+        TamaList.Add(newTama);   
         Console.WriteLine($"Du har köpt en ny Tamagotchi och döpt den till {newName}.");
             
         }
@@ -138,13 +137,13 @@ while (tama.GetAlive() == true)
         {    
             Console.WriteLine($"Tamagotchi namn: {newTama.name}");
             Console.WriteLine();
-        
+                
         }  
 
         for (int i = 0; i < TamaList.Count; i++)
         {
             Console.WriteLine($"{i + 1}. {TamaList[i].name}");
-    
+            
         }
 
     // Låt användaren välja genom att ange indexet för Tamagotchit från listan
