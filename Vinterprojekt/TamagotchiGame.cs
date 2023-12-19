@@ -46,8 +46,8 @@ while (tama.GetAlive() == true)
     Console.WriteLine();
 
 
-    string Val = Console.ReadLine();
-    if (Val == "1")
+    string Choice = Console.ReadLine();
+    if (Choice == "1")
     {   Console.Clear();
         Console.WriteLine();
         string word = Console.ReadLine();
@@ -56,7 +56,7 @@ while (tama.GetAlive() == true)
         Console.WriteLine();
     }
 
-    if (Val == "2")
+    if (Choice == "2")
     {   Console.Clear();
         Console.WriteLine();
         tama.Hi();
@@ -64,7 +64,7 @@ while (tama.GetAlive() == true)
         Console.WriteLine();
     }
 
-    if (Val == "3")
+    if (Choice == "3")
     {   
         Console.Clear();
         Console.WriteLine();
@@ -73,7 +73,7 @@ while (tama.GetAlive() == true)
         Console.WriteLine();
     }
 
-    else if (Val == "4")
+    else if (Choice == "4")
     {   Console.Clear();
         Console.WriteLine();
         Console.WriteLine("Du gör inget");
@@ -81,7 +81,7 @@ while (tama.GetAlive() == true)
         Console.WriteLine();
     }
 
-    else if (Val == "5")
+    else if (Choice == "5")
     {   Console.Clear();
         Console.WriteLine();
 
@@ -89,8 +89,8 @@ while (tama.GetAlive() == true)
         Console.ForegroundColor = ConsoleColor.White;
         Console.WriteLine();
         Console.WriteLine($"Du har {store.coins} coins. Vill du köpa ett nytt ord? Ja/Nej");
-        string buyVal = Console.ReadLine();
-        if (buyVal.ToLower() == "ja")
+        string buyChoice = Console.ReadLine();
+        if (buyChoice.ToLower() == "ja")
         {   
             Console.Clear();
             string newWord = store.BuyWord();
@@ -102,7 +102,7 @@ while (tama.GetAlive() == true)
         }
     }
 
-    else if (Val == "6")
+    else if (Choice == "6")
     {   
         Console.Clear();
         Console.WriteLine();
@@ -110,7 +110,7 @@ while (tama.GetAlive() == true)
     
     }
 
-    else if (Val == "7")
+    else if (Choice == "7")
     {
         Console.Clear();
         Console.WriteLine("Ange namn för den nya Tamagotchin:");
@@ -128,7 +128,7 @@ while (tama.GetAlive() == true)
             
         }
 
-    else if (Val == "8")
+    else if (Choice == "8")
     {
         Console.Clear();
         Console.WriteLine("Dina Tamagotchis:");
